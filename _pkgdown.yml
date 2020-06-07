@@ -1,0 +1,12 @@
+reference:
+  - title: "Sequence Alignment"
+    contents:
+      - align
+      - force_align
+  - title: "Print Results"
+    contents:
+      - print.ssw
+      - formatter
+  - title: "Wrapper"
+    contents:
+      - pyssw
