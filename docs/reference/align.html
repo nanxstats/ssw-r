@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ssw</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -126,12 +126,14 @@
     </div>
 
     <pre class="usage"><span class='fu'>align</span>(
-  <span class='kw'>read</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>reference</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>gap_open</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
-  <span class='kw'>gap_extension</span> <span class='kw'>=</span> <span class='fl'>1L</span>,
-  <span class='kw'>start_idx</span> <span class='kw'>=</span> <span class='fl'>0L</span>,
-  <span class='kw'>end_idx</span> <span class='kw'>=</span> <span class='fl'>0L</span>
+  read = <span class='kw'>NULL</span>,
+  reference = <span class='kw'>NULL</span>,
+  gap_open = <span class='fl'>3L</span>,
+  gap_extension = <span class='fl'>1L</span>,
+  start_idx = <span class='fl'>0L</span>,
+  end_idx = <span class='fl'>0L</span>,
+  match_score = <span class='fl'>2L</span>,
+  mismatch_penalty = <span class='fl'>2L</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -162,6 +164,14 @@
       <td><p>Index to end search (trying to avoid a target region).
 The default value 0 means using the whole reference length.</p></td>
     </tr>
+    <tr>
+      <th>match_score</th>
+      <td><p>For scoring matches, integer</p></td>
+    </tr>
+    <tr>
+      <th>mismatch_penalty</th>
+      <td><p>For scoring mismatches, integer</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -169,9 +179,11 @@ The default value 0 means using the whole reference length.</p></td>
     <p>A list containing the ssw aligner object and the alignment results.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>align</span>(<span class='st'>"ACGT"</span>, <span class='st'>"TTTTACGTCCCCC"</span>)
-<span class='no'>a</span>
-<span class='no'>a</span>$<span class='no'>alignment</span>$<span class='no'>optimal_score</span></div><div class='output co'>#&gt; [1] 8</div><div class='input'><span class='no'>a</span>$<span class='no'>alignment</span>$<span class='no'>sub_optimal_score</span></div><div class='output co'>#&gt; [1] 0</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>a</span> <span class='op'>&lt;-</span> <span class='fu'>align</span>(<span class='st'>"ACGT"</span>, <span class='st'>"TTTTACGTCCCCC"</span>)
+<span class='kw'>a</span>
+<span class='kw'>a</span><span class='op'>$</span><span class='kw'>alignment</span><span class='op'>$</span><span class='kw'>optimal_score</span>
+</div><div class='output co'>#&gt; [1] 8</div><div class='input'><span class='kw'>a</span><span class='op'>$</span><span class='kw'>alignment</span><span class='op'>$</span><span class='kw'>sub_optimal_score</span>
+</div><div class='output co'>#&gt; [1] 0</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -187,7 +199,7 @@ The default value 0 means using the whole reference length.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

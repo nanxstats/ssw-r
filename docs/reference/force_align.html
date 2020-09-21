@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">ssw</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -125,7 +125,13 @@
     <p>Forced alignment by increasing gap open penalty</p>
     </div>
 
-    <pre class="usage"><span class='fu'>force_align</span>(<span class='no'>read</span>, <span class='no'>reference</span>, <span class='kw'>force_overhang</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>force_align</span>(
+  <span class='kw'>read</span>,
+  <span class='kw'>reference</span>,
+  force_overhang = <span class='fl'>FALSE</span>,
+  match_score = <span class='fl'>2L</span>,
+  mismatch_penalty = <span class='fl'>2L</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,6 +148,14 @@
       <th>force_overhang</th>
       <td><p>Make sure only one end overhangs?</p></td>
     </tr>
+    <tr>
+      <th>match_score</th>
+      <td><p>For scoring matches, integer</p></td>
+    </tr>
+    <tr>
+      <th>mismatch_penalty</th>
+      <td><p>For scoring mismatches, integer</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -151,19 +165,21 @@ and the alignment results.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># results are truncated</span>
-<span class='no'>a</span> <span class='kw'>&lt;-</span> <span class='fu'>force_align</span>(<span class='st'>"ACTG"</span>, <span class='st'>"TTTTCTGCCCCCACG"</span>)
-<span class='no'>a</span>
+<span class='kw'>a</span> <span class='op'>&lt;-</span> <span class='fu'>force_align</span>(<span class='st'>"ACTG"</span>, <span class='st'>"TTTTCTGCCCCCACG"</span>)
+<span class='kw'>a</span>
 
 <span class='co'># format the results</span>
-<span class='no'>b</span> <span class='kw'>&lt;-</span> <span class='no'>a</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='formatter.html'>formatter</a></span>()
-<span class='no'>b</span></div><div class='output co'>#&gt; [[1]]
+<span class='kw'>b</span> <span class='op'>&lt;-</span> <span class='kw'>a</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='formatter.html'>formatter</a></span>()
+<span class='kw'>b</span>
+</div><div class='output co'>#&gt; [[1]]
 #&gt; [1] "TTTTCTGCCCCCACG"
 #&gt; 
 #&gt; [[2]]
 #&gt; [1] "   ACTG"
 #&gt; </div><div class='input'>
 <span class='co'># print the formatted results directly</span>
-<span class='no'>a</span> <span class='kw'>%&gt;%</span> <span class='fu'><a href='formatter.html'>formatter</a></span>(<span class='kw'>print</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div></pre>
+<span class='kw'>a</span> <span class='op'>%&gt;%</span> <span class='fu'><a href='formatter.html'>formatter</a></span>(print = <span class='fl'>TRUE</span>)
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -179,7 +195,7 @@ and the alignment results.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
