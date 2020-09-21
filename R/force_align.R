@@ -3,6 +3,8 @@
 #' @param read The read, character string
 #' @param reference The reference, character string
 #' @param force_overhang Make sure only one end overhangs?
+#' @param match_score For scoring matches, integer
+#' @param mismatch_penalty For scoring mismatches, integer
 #'
 #' @return A list containing the input sequences, ssw aligner object,
 #' and the alignment results.
@@ -21,8 +23,8 @@
 #' # print the formatted results directly
 #' a %>% formatter(print = TRUE)
 
-force_align <- function(read, reference, force_overhang = FALSE) {
-  obj <- pyssw$SSW()
+force_align <- function(read, reference, force_overhang = FALSE, match_score = 2L, mismatch_penalty = 2L) {
+  obj <- pyssw$SSW(match_score = as.integer(match_score), mismatch_penalty = as.integer(mismatch_penalty))
   obj$setRead(read)
   obj$setReference(reference)
   res <- pyssw$force_align(read = read, reference = reference, force_overhang = force_overhang)
