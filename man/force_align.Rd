@@ -4,7 +4,13 @@
 \alias{force_align}
 \title{Forced alignment by increasing gap open penalty}
 \usage{
-force_align(read, reference, force_overhang = FALSE)
+force_align(
+  read,
+  reference,
+  force_overhang = FALSE,
+  match_score = 2L,
+  mismatch_penalty = 2L
+)
 }
 \arguments{
 \item{read}{The read, character string}
@@ -12,6 +18,10 @@ force_align(read, reference, force_overhang = FALSE)
 \item{reference}{The reference, character string}
 
 \item{force_overhang}{Make sure only one end overhangs?}
+
+\item{match_score}{For scoring matches, integer}
+
+\item{mismatch_penalty}{For scoring mismatches, integer}
 }
 \value{
 A list containing the input sequences, ssw aligner object,

@@ -10,7 +10,9 @@ align(
   gap_open = 3L,
   gap_extension = 1L,
   start_idx = 0L,
-  end_idx = 0L
+  end_idx = 0L,
+  match_score = 2L,
+  mismatch_penalty = 2L
 )
 }
 \arguments{
@@ -26,6 +28,10 @@ align(
 
 \item{end_idx}{Index to end search (trying to avoid a target region).
 The default value 0 means using the whole reference length.}
+
+\item{match_score}{For scoring matches, integer}
+
+\item{mismatch_penalty}{For scoring mismatches, integer}
 }
 \value{
 A list containing the ssw aligner object and the alignment results.
