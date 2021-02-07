@@ -1,7 +1,6 @@
 ---
 title: "Code Examples for ssw-r"
 author: "Nan Xiao <<https://nanx.me>>"
-date: "`r Sys.Date()`"
 bibliography: ssw.bib
 output:
   rmarkdown::html_document:
