@@ -5,7 +5,7 @@ bibliography: ssw.bib
 output:
   rmarkdown::html_document:
     toc: true
-    number_sections: true
+    number_sections: false
     highlight: "textmate"
     css: "custom.css"
 vignette: >
@@ -29,7 +29,7 @@ A short read sequence:
 read <- "ACGT"
 ```
 
-# Exact alignment
+## Exact alignment
 
 Align the read against the reference sequence (`TTTTACGTCCCCC`) and print the results:
 
@@ -58,7 +58,7 @@ a$alignment$optimal_score
 a$alignment$sub_optimal_score
 ```
 
-# Deletion
+## Deletion
 
 ```{r}
 read %>% align("TTTTACAGTCCCCC")
@@ -77,7 +77,7 @@ Query:         0    AC-GT    3
 ACGT
 ```
 
-# Insertion with gap open
+## Insertion with gap open
 
 ```{r}
 read %>% align("TTTTACTCCCCC", gap_open = 3)
@@ -96,7 +96,7 @@ Query:         0    AC    1
 ACGT
 ```
 
-# Insertion with no gap open penalty
+## Insertion with no gap open penalty
 
 ```{r}
 read %>% align("TTTTACTCCCCC", gap_open = 0)
@@ -115,7 +115,7 @@ Query:         0    ACGT    3
 ACGT
 ```
 
-# Specify start index
+## Specify start index
 
 ```{r}
 a <- align("ACTG", "ACTCACTG", start_idx = 4)
@@ -154,7 +154,7 @@ Query:         0    ACTG    3
 ACTG
 ```
 
-# Forced alignment
+## Forced alignment
 
 Enforce no gaps by increasing the penalty:
 
@@ -196,4 +196,4 @@ TTTTCTGCCCCCACG
    ACTG
 ```
 
-# References
+## References

@@ -1,9 +1,14 @@
+url: https://nanx.me/ssw-r/
+
+template:
+  bootstrap: 5
+
 reference:
-  - title: "Sequence Alignment"
+  - title: "Sequence alignment"
     contents:
       - align
       - force_align
-  - title: "Print Results"
+  - title: "Print results"
     contents:
       - print.ssw
       - formatter
