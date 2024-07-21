@@ -3,7 +3,7 @@ pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   ssw: ssw.html
-last_built: 2024-07-21T22:51Z
+last_built: 2024-07-21T23:00Z
 urls:
   reference: https://nanx.me/ssw-r/reference
   article: https://nanx.me/ssw-r/articles
