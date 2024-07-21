@@ -27,9 +27,9 @@ pip3 install ssw-py
 reticulate::use_python("/usr/local/bin/python3")
 library("ssw")
 
-"ACGT" %>% align("TTTTACGTCCCCC")
-"ACGT" %>% align("TTTTACTCCCCC", gap_open = 3)
-"ACTG" %>% force_align("TTTTCTGCCCCCACG") %>% formatter(print = TRUE)
+"ACGT" |> align("TTTTACGTCCCCC")
+"ACGT" |> align("TTTTACTCCCCC", gap_open = 3)
+"ACTG" |> force_align("TTTTCTGCCCCCACG") |> formatter(print = TRUE)
 ```
 
 ## Developers

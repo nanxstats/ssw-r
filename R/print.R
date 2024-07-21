@@ -25,9 +25,9 @@ print.ssw <- function (x, start_idx = 0L, ...) {
 #'
 #' @examplesIf is_installed_sswpy()
 #' a <- force_align("ACTG", "TTTTCTGCCCCCACG")
-#' b <- a %>% formatter()
+#' b <- a |> formatter()
 #' b
-#' a %>% formatter(print = TRUE)
+#' a |> formatter(print = TRUE)
 
 formatter <- function (x, print = FALSE) {
   invisible(pyssw$format_force_align(x$read, x$reference, x$alignment, do_print = print))

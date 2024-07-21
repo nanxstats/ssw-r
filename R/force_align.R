@@ -17,11 +17,11 @@
 #' a
 #'
 #' # Format the results
-#' b <- a %>% formatter()
+#' b <- a |> formatter()
 #' b
 #'
 #' # Print the formatted results directly
-#' a %>% formatter(print = TRUE)
+#' a |> formatter(print = TRUE)
 
 force_align <- function(read, reference, force_overhang = FALSE, match_score = 2L, mismatch_penalty = 2L) {
   obj <- pyssw$SSW(match_score = as.integer(match_score), mismatch_penalty = as.integer(mismatch_penalty))

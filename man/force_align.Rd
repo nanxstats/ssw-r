@@ -37,10 +37,10 @@ a <- force_align("ACTG", "TTTTCTGCCCCCACG")
 a
 
 # Format the results
-b <- a \%>\% formatter()
+b <- a |> formatter()
 b
 
 # Print the formatted results directly
-a \%>\% formatter(print = TRUE)
+a |> formatter(print = TRUE)
 \dontshow{\}) # examplesIf}
 }

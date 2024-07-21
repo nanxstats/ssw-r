@@ -40,13 +40,13 @@ read <- "ACGT"
 Align the read against the reference sequence (`TTTTACGTCCCCC`) and print the results:
 
 ```{r}
-read %>% align("TTTTACGTCCCCC")
+read |> align("TTTTACGTCCCCC")
 ```
 
 ```
 CIGAR start index 4: 4M
-optimal_score: 8	sub-optimal_score: 0	
-target_begin: 4	target_end: 7	
+optimal_score: 8	sub-optimal_score: 0
+target_begin: 4	target_end: 7
 query_begin: 0	query_end: 3
 
 Target:        4    ACGT    7
@@ -59,7 +59,7 @@ ACGT
 Get specific results, such as the alignment scores:
 
 ```{r}
-a <- read %>% align("TTTTACGTCCCCC")
+a <- read |> align("TTTTACGTCCCCC")
 a$alignment$optimal_score
 a$alignment$sub_optimal_score
 ```
@@ -67,13 +67,13 @@ a$alignment$sub_optimal_score
 ## Deletion
 
 ```{r}
-read %>% align("TTTTACAGTCCCCC")
+read |> align("TTTTACAGTCCCCC")
 ```
 
 ```
 CIGAR start index 4: 2M1D2M
-optimal_score: 5	sub-optimal_score: 0	
-target_begin: 4	target_end: 8	
+optimal_score: 5	sub-optimal_score: 0
+target_begin: 4	target_end: 8
 query_begin: 0	query_end: 3
 
 Target:        4    ACAGT    8
@@ -86,13 +86,13 @@ ACGT
 ## Insertion with gap open
 
 ```{r}
-read %>% align("TTTTACTCCCCC", gap_open = 3)
+read |> align("TTTTACTCCCCC", gap_open = 3)
 ```
 
 ```
 CIGAR start index 4: 2M
-optimal_score: 4	sub-optimal_score: 0	
-target_begin: 4	target_end: 5	
+optimal_score: 4	sub-optimal_score: 0
+target_begin: 4	target_end: 5
 query_begin: 0	query_end: 1
 
 Target:        4    AC    5
@@ -105,13 +105,13 @@ ACGT
 ## Insertion with no gap open penalty
 
 ```{r}
-read %>% align("TTTTACTCCCCC", gap_open = 0)
+read |> align("TTTTACTCCCCC", gap_open = 0)
 ```
 
 ```
 CIGAR start index 4: 2M1I1M
-optimal_score: 6	sub-optimal_score: 0	
-target_begin: 4	target_end: 6	
+optimal_score: 6	sub-optimal_score: 0
+target_begin: 4	target_end: 6
 query_begin: 0	query_end: 3
 
 Target:        4    AC-T    6
@@ -130,8 +130,8 @@ a
 
 ```
 CIGAR start index 0: 4M
-optimal_score: 8	sub-optimal_score: 0	
-target_begin: 0	target_end: 3	
+optimal_score: 8	sub-optimal_score: 0
+target_begin: 0	target_end: 3
 query_begin: 0	query_end: 3
 
 Target:        0    ACTC    3
@@ -144,13 +144,13 @@ ACTG
 Print the results from position 4:
 
 ```{r}
-a %>% print(start_idx = 4)
+a |> print(start_idx = 4)
 ```
 
 ```
 CIGAR start index 0: 4M
-optimal_score: 8	sub-optimal_score: 0	
-target_begin: 0	target_end: 3	
+optimal_score: 8	sub-optimal_score: 0
+target_begin: 0	target_end: 3
 query_begin: 0	query_end: 3
 
 Target:        0    ACTG    3
@@ -173,8 +173,8 @@ The results are truncated:
 
 ```
 CIGAR start index 4: 3M
-optimal_score: 6	sub-optimal_score: 0	
-target_begin: 4	target_end: 6	
+optimal_score: 6	sub-optimal_score: 0
+target_begin: 4	target_end: 6
 query_begin: 1	query_end: 3
 
 Target:        4    CTG    6
@@ -187,14 +187,14 @@ ACTG
 Use `formatter()` to avoid the truncation:
 
 ```{r}
-b <- a %>% formatter()
+b <- a |> formatter()
 b
 ```
 
 Or pretty-print the formatted results directly:
 
 ```{r}
-a %>% formatter(print = TRUE)
+a |> formatter(print = TRUE)
 ```
 
 ```
