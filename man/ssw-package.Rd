@@ -6,7 +6,7 @@
 \alias{ssw-package}
 \title{ssw: Striped Smith-Waterman Algorithm for Sequence Alignment using SIMD}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
 R interface for SSW, a fast implementation of the Smith-Waterman algorithm for sequence alignment using SIMD.
 }

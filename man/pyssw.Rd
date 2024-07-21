@@ -5,7 +5,7 @@
 \alias{pyssw}
 \title{Global reference to ssw-py}
 \format{
-An object of class \code{python.builtin.module} (inherits from \code{python.builtin.object}) of length 2.
+An object of class \code{python.builtin.module} (inherits from \code{python.builtin.object}) of length 0.
 }
 \usage{
 pyssw
