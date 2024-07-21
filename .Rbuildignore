@@ -1,5 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+
 ^_pkgdown\.yml$
 ^pkgdown$
 ^docs$
+^inst/logo/logo\.R$

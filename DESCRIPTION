@@ -20,7 +20,6 @@ VignetteBuilder: knitr
 URL: https://nanx.me/ssw-r/, https://github.com/nanxstats/ssw-r
 BugReports: https://github.com/nanxstats/ssw-r/issues
 Encoding: UTF-8
-LazyData: true
 Imports:
     reticulate,
     magrittr

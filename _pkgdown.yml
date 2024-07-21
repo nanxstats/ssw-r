@@ -12,6 +12,7 @@ reference:
     contents:
       - print.ssw
       - formatter
-  - title: "Wrapper"
+  - title: "Helpers"
     contents:
       - pyssw
+      - is_installed_sswpy
