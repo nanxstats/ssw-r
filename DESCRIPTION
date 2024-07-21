@@ -13,7 +13,7 @@ Authors@R: c(
 Maintainer: Nan Xiao <me@nanx.me>
 Description: R interface for SSW, a fast implementation of the Smith-Waterman
     algorithm for sequence alignment using SIMD.
-License: MIT
+License: MIT + file LICENSE
 SystemRequirements: Python (>= 3.6.0), ssw-py (>= 0.2.6).
     Detailed installation instructions can be found in the README file.
 VignetteBuilder: knitr

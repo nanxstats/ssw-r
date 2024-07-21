@@ -6,3 +6,4 @@
 ^docs$
 ^inst/logo/logo\.R$
 ^\.github$
+^LICENSE\.md$
