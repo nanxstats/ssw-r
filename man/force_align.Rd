@@ -31,14 +31,16 @@ and the alignment results.
 Forced alignment by increasing gap open penalty
 }
 \examples{
-# results are truncated
+\dontshow{if (is_installed_sswpy()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Results are truncated
 a <- force_align("ACTG", "TTTTCTGCCCCCACG")
 a
 
-# format the results
+# Format the results
 b <- a \%>\% formatter()
 b
 
-# print the formatted results directly
+# Print the formatted results directly
 a \%>\% formatter(print = TRUE)
+\dontshow{\}) # examplesIf}
 }

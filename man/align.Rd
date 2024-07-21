@@ -40,8 +40,10 @@ A list containing the ssw aligner object and the alignment results.
 Align a read to the reference with optional index offsetting
 }
 \examples{
+\dontshow{if (is_installed_sswpy()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 a <- align("ACGT", "TTTTACGTCCCCC")
 a
 a$alignment$optimal_score
 a$alignment$sub_optimal_score
+\dontshow{\}) # examplesIf}
 }

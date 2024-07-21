@@ -14,12 +14,11 @@
 #'
 #' @export align
 #'
-#' @examples
+#' @examplesIf is_installed_sswpy()
 #' a <- align("ACGT", "TTTTACGTCCCCC")
 #' a
 #' a$alignment$optimal_score
 #' a$alignment$sub_optimal_score
-
 align <- function(read = NULL, reference = NULL, gap_open = 3L, gap_extension = 1L, start_idx = 0L, end_idx = 0L, match_score = 2L, mismatch_penalty = 2L) {
   if (is.null(read) | is.null(reference)) stop("read and reference cannot be NULL")
   obj <- pyssw$SSW(match_score = as.integer(match_score), mismatch_penalty = as.integer(mismatch_penalty))

@@ -11,16 +11,16 @@
 #'
 #' @export force_align
 #'
-#' @examples
-#' # results are truncated
+#' @examplesIf is_installed_sswpy()
+#' # Results are truncated
 #' a <- force_align("ACTG", "TTTTCTGCCCCCACG")
 #' a
 #'
-#' # format the results
+#' # Format the results
 #' b <- a %>% formatter()
 #' b
 #'
-#' # print the formatted results directly
+#' # Print the formatted results directly
 #' a %>% formatter(print = TRUE)
 
 force_align <- function(read, reference, force_overhang = FALSE, match_score = 2L, mismatch_penalty = 2L) {
