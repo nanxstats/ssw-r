@@ -1,6 +1,9 @@
 # ssw-r <img src="man/figures/logo.png" align="right" width="120" />
 
+<!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![R-CMD-check](https://github.com/nanxstats/ssw-r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/ssw-r/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 ssw-r offers an R interface for [SSW](https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library), a fast implementation of the Smith-Waterman algorithm for sequence alignment using SIMD. ssw-r is currently built on the Python package [ssw-py](https://github.com/Wyss/ssw-py).
 
