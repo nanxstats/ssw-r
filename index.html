@@ -65,30 +65,55 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Install ssw-r from GitHub:</p>
+<p>You can install ssw-r from CRAN once available:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ssw"</span><span class="op">)</span></span></code></pre></div>
+<p>Or try the development version on GitHub:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"nanxstats/ssw-r"</span><span class="op">)</span></span></code></pre></div>
-<p>Installed ssw-py via pip:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">pip3</span> install ssw-py</span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="install-ssw-py">Install ssw-py<a class="anchor" aria-label="anchor" href="#install-ssw-py"></a>
+</h2>
+<p>The easiest way to install the Python package ssw-py that ssw-r can discover easily, is to run the helper function <code><a href="reference/install_ssw_py.html">ssw::install_ssw_py()</a></code>. By default, it installs ssw-py into an virtual environment with the environment name <code>r-ssw-py</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">ssw</span><span class="fu">::</span><span class="fu"><a href="reference/install_ssw_py.html">install_ssw_py</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>This follows the best practices suggested by the reticulate vignette <a href="https://rstudio.github.io/reticulate/articles/python_dependencies.html" class="external-link">Managing an R Package’s Python Dependencies</a>. There are also recommendations in the vignette on how to manage multiple R packages with different Python dependencies.</p>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">reticulate</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/use_python.html" class="external-link">use_python</a></span><span class="op">(</span><span class="st">"/usr/local/bin/python3"</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://nanx.me/ssw-r/">"ssw"</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="st">"ACGT"</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACGTCCCCC"</span><span class="op">)</span></span>
-<span><span class="st">"ACGT"</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACTCCCCC"</span>, gap_open <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="st">"ACTG"</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/force_align.html">force_align</a></span><span class="op">(</span><span class="st">"TTTTCTGCCCCCACG"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/formatter.html">formatter</a></span><span class="op">(</span>print <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
-<h2 id="developers">Developers<a class="anchor" aria-label="anchor" href="#developers"></a>
-</h2>
-<p>If you have already installed Python and ssw-py, and want to develop ssw-r in RStudio, simply create a file <code>.Rprofile</code> under the package directory and set the Python binary path (Homebrew Python 3 path example below):</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>RETICULATE_PYTHON <span class="op">=</span> <span class="st">"/usr/local/bin/python3"</span><span class="op">)</span></span></code></pre></div>
-<p>The next time you open the project, the correct Python path and library path should be already set. For more technical details, see <a href="https://rstudio.github.io/reticulate/articles/versions.html" class="external-link">reticulate Python version configuration</a>.</p>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://nanx.me/ssw-r/">"ssw"</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="st">"ACGT"</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACGTCCCCC"</span><span class="op">)</span></span></code></pre></div>
+<pre class="text"><code>CIGAR start index 4: 4M
+optimal_score: 8
+sub-optimal_score: 0
+target_begin: 4 target_end: 7
+query_begin: 0
+query_end: 3
+
+Target:        4    ACGT    7
+                    ||||
+Query:         0    ACGT    3</code></pre>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="st">"ACGT"</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACTCCCCC"</span>, gap_open <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
+<pre class="text"><code>CIGAR start index 4: 2M
+optimal_score: 4
+sub-optimal_score: 0
+target_begin: 4 target_end: 5
+query_begin: 0
+query_end: 1
+
+Target:        4    AC    5
+                    ||
+Query:         0    AC    1</code></pre>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="st">"ACTG"</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/force_align.html">force_align</a></span><span class="op">(</span><span class="st">"TTTTCTGCCCCCACG"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="reference/formatter.html">formatter</a></span><span class="op">(</span>print <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre class="text"><code><span><span class="va">TTTTCTGCCCCCACG</span></span>
+<span>   <span class="va">ACTG</span></span></code></pre>
+<p>For detailed usage, see the <a href="https://nanx.me/ssw-r/articles/ssw.html">vignette</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
