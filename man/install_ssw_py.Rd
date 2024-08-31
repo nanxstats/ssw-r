@@ -11,18 +11,18 @@ install_ssw_py(
 )
 }
 \arguments{
-\item{...}{Other arguments passed to [reticulate::py_install()].}
+\item{...}{Other arguments passed to \code{\link[reticulate:py_install]{reticulate::py_install()}}.}
 
 \item{envname}{The name or full path of the environment in which
-ssw-py is installed. Default is `r-ssw-py`.}
+ssw-py is installed. Default is \code{r-ssw-py}.}
 
-\item{new_env}{Logical. If `TRUE`, the specified Python environment
+\item{new_env}{Logical. If \code{TRUE}, the specified Python environment
 will be deleted and recreated if it already exists.
-Defaults to `TRUE` only when using the default environment name.}
+Defaults to \code{TRUE} only when using the default environment name.}
 }
 \value{
-Invisibly returns `NULL`. Primarily used for its side effect
-  of installing the Python package in the specified environment.
+Invisibly returns \code{NULL}. Primarily used for its side effect
+of installing the Python package in the specified environment.
 }
 \description{
 Install ssw-py and its dependencies

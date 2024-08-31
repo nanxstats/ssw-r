@@ -5,8 +5,8 @@
 \title{Align a read to the reference with optional index offsetting}
 \usage{
 align(
-  read = NULL,
-  reference = NULL,
+  read,
+  reference,
   gap_open = 3L,
   gap_extension = 1L,
   start_idx = 0L,

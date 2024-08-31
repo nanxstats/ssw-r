@@ -11,7 +11,7 @@
 
 \item{start_idx}{Index to start printing from.}
 
-\item{...}{Additional parameters for \code{\link{print}} (not used).}
+\item{...}{Additional parameters for \code{\link[=print]{print()}} (not used).}
 }
 \description{
 Print SSW alignment results

@@ -1,8 +1,8 @@
 #' Print SSW alignment results
 #'
-#' @param x An object of class \code{ssw}.
+#' @param x An object of class `ssw`.
 #' @param start_idx Index to start printing from.
-#' @param ... Additional parameters for \code{\link{print}} (not used).
+#' @param ... Additional parameters for [print()] (not used).
 #'
 #' @method print ssw
 #'
@@ -13,12 +13,12 @@
 #' a
 
 print.ssw <- function (x, start_idx = 0L, ...) {
-  x$ssw$printResult(x$alignment, start_idx = as.integer(start_idx))
+  x$ssw$print_result(x$alignment, start_idx = as.integer(start_idx))
 }
 
 #' Format and pretty-print SSW forced alignment results without truncation
 #'
-#' @param x Forced alignment results. An object of class \code{ssw}.
+#' @param x Forced alignment results. An object of class `ssw`.
 #' @param print Pretty-print the results?
 #'
 #' @export formatter

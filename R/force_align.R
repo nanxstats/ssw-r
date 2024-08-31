@@ -22,13 +22,31 @@
 #'
 #' # Print the formatted results directly
 #' a |> formatter(print = TRUE)
+force_align <- function(
+    read,
+    reference,
+    force_overhang = FALSE,
+    match_score = 2L,
+    mismatch_penalty = 2L) {
+  obj <- ssw_py$AlignmentMgr(
+    match_score = as.integer(match_score),
+    mismatch_penalty = as.integer(mismatch_penalty)
+  )
+  obj$set_read(read)
+  obj$set_reference(reference)
+  res <- ssw_py$force_align(
+    read = read,
+    reference = reference,
+    force_overhang = force_overhang
+  )
 
-force_align <- function(read, reference, force_overhang = FALSE, match_score = 2L, mismatch_penalty = 2L) {
-  obj <- ssw_py$SSW(match_score = as.integer(match_score), mismatch_penalty = as.integer(mismatch_penalty))
-  obj$setRead(read)
-  obj$setReference(reference)
-  res <- ssw_py$force_align(read = read, reference = reference, force_overhang = force_overhang)
-  lst <- list("ssw" = obj, "alignment" = res, "read" = read, "reference" = reference)
-  class(lst) <- "ssw"
-  lst
+  structure(
+    list(
+      "ssw" = obj,
+      "alignment" = res,
+      "read" = read,
+      "reference" = reference
+    ),
+    class = "ssw"
+  )
 }
