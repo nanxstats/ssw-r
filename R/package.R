@@ -14,5 +14,6 @@
 pyssw <- NULL
 
 .onLoad <- function(libname, pkgname) {
+  reticulate::use_virtualenv("r-ssw-py", required = FALSE)
   pyssw <<- reticulate::import("ssw", delay_load = TRUE)
 }
