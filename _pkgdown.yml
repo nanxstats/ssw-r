@@ -15,5 +15,5 @@ reference:
   - title: "Helpers"
     contents:
       - install_ssw_py
-      - pyssw
-      - is_installed_sswpy
+      - ssw_py
+      - is_installed_ssw_py

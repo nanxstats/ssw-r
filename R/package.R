@@ -10,10 +10,10 @@
 #'
 #' @return ssw-py reference object
 #'
-#' @export pyssw
-pyssw <- NULL
+#' @export ssw_py
+ssw_py <- NULL
 
 .onLoad <- function(libname, pkgname) {
   reticulate::use_virtualenv("r-ssw-py", required = FALSE)
-  pyssw <<- reticulate::import("ssw", delay_load = TRUE)
+  ssw_py <<- reticulate::import("ssw", delay_load = TRUE)
 }
