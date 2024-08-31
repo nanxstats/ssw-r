@@ -66,10 +66,10 @@
 
     
     
-<p>The <code>ssw</code> package offers an R interface for <a href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library" class="external-link">SSW</a>
-described in <span class="citation">Zhao et al. (2013)</span>, a fast
-implementation of the Smith-Waterman algorithm for sequence alignment
-using SIMD. The package is currently built on <a href="https://github.com/Wyss/ssw-py" class="external-link">ssw-py</a>.</p>
+<p>The R package ssw offers an R interface for <a href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library" class="external-link">SSW</a>,
+a fast implementation of the Smith-Waterman algorithm for sequence
+alignment using SIMD, described in <span class="citation">Zhao et al.
+(2013)</span>. The package is currently built on <a href="https://pypi.org/project/ssw-py/" class="external-link">ssw-py</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://nanx.me/ssw-r/">"ssw"</a></span><span class="op">)</span></span></code></pre></div>
 <p>A short read sequence:</p>
@@ -203,6 +203,27 @@ ACTG</code></pre>
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/formatter.html">formatter</a></span><span class="op">(</span>print <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="va">TTTTCTGCCCCCACG</span></span>
 <span>   <span class="va">ACTG</span></span></code></pre>
+</div>
+<div class="section level2">
+<h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+</h2>
+<p>ssw-r is built upon the work of two outstanding projects:</p>
+<ol style="list-style-type: decimal">
+<li>
+<a href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library" class="external-link">SSW</a>
+- Original C implementation. Author: Mengyao Zhao</li>
+<li>
+<a href="https://pypi.org/project/ssw-py/" class="external-link">ssw-py</a> - Python
+binding for SSW. Author: Nick Conway</li>
+</ol>
+<p>We extend our sincere gratitude to Mengyao Zhao for developing the
+original SSW library and to Nick Conway for maintaining the ssw-py
+package. Their work forms the foundation of ssw-r. While ssw-r does not
+directly incorporate code from these projects, it serves as an R
+interface to their functionality. We encourage users to visit the
+original repositories for more information about the underlying
+implementation and to consider citing these works in publications that
+use ssw-r.</p>
 </div>
 <div class="section level2 unnumbered">
 <h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>

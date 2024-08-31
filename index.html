@@ -61,7 +61,7 @@
 </div>
 <!-- badges: start -->
 
-<p>ssw-r offers an R interface for <a href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library" class="external-link">SSW</a>, a fast implementation of the Smith-Waterman algorithm for sequence alignment using SIMD. ssw-r is currently built on the Python package <a href="https://github.com/Wyss/ssw-py" class="external-link">ssw-py</a>.</p>
+<p>ssw-r offers an R interface for <a href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library" class="external-link">SSW</a>, a fast implementation of the Smith-Waterman algorithm for sequence alignment using SIMD. ssw-r is currently built on the Python package <a href="https://pypi.org/project/ssw-py/" class="external-link">ssw-py</a>.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -89,6 +89,18 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span>RETICULATE_PYTHON <span class="op">=</span> <span class="st">"/usr/local/bin/python3"</span><span class="op">)</span></span></code></pre></div>
 <p>The next time you open the project, the correct Python path and library path should be already set. For more technical details, see <a href="https://rstudio.github.io/reticulate/articles/versions.html" class="external-link">reticulate Python version configuration</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="acknowledgements">Acknowledgements<a class="anchor" aria-label="anchor" href="#acknowledgements"></a>
+</h2>
+<p>ssw-r is built upon the work of two outstanding projects:</p>
+<ol style="list-style-type: decimal">
+<li>
+<a href="https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library" class="external-link">SSW</a> - Original C implementation. Author: Mengyao Zhao</li>
+<li>
+<a href="https://pypi.org/project/ssw-py/" class="external-link">ssw-py</a> - Python binding for SSW. Author: Nick Conway</li>
+</ol>
+<p>We extend our sincere gratitude to Mengyao Zhao for developing the original SSW library and to Nick Conway for maintaining the ssw-py package. Their work forms the foundation of ssw-r. While ssw-r does not directly incorporate code from these projects, it serves as an R interface to their functionality. We encourage users to visit the original repositories for more information about the underlying implementation and to consider citing these works in publications that use ssw-r.</p>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
@@ -124,7 +136,6 @@
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Nan Xiao <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-0250-5673" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
