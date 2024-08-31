@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 URL: https://nanx.me/ssw-r/, https://github.com/nanxstats/ssw-r
 BugReports: https://github.com/nanxstats/ssw-r/issues
 Encoding: UTF-8
-SystemRequirements: Python (>= 3.6.0), ssw-py (>= 0.2.6).
+SystemRequirements: Python (>= 3.6.0), ssw-py (>= 1.0.0).
     Detailed installation instructions can be found in the README file.
 VignetteBuilder: knitr
 Depends: R (>= 4.1.0)
@@ -21,4 +21,5 @@ Imports:
 Suggests:
     knitr,
     rmarkdown
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

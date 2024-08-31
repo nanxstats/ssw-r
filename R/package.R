@@ -6,7 +6,7 @@
 
 #' Global reference to ssw-py
 #'
-#' Global reference to ssw-py which will be initialized in \code{.onLoad}.
+#' Global reference to ssw-py which will be initialized in `.onLoad`.
 #'
 #' @return ssw-py reference object
 #'

@@ -7,7 +7,7 @@
 is_installed_ssw_py()
 }
 \value{
-`TRUE` if installed, `FALSE` if not.
+\code{TRUE} if installed, \code{FALSE} if not.
 }
 \description{
 Is ssw-py installed?

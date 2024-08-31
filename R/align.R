@@ -19,18 +19,27 @@
 #' a
 #' a$alignment$optimal_score
 #' a$alignment$sub_optimal_score
-align <- function(read = NULL, reference = NULL, gap_open = 3L, gap_extension = 1L, start_idx = 0L, end_idx = 0L, match_score = 2L, mismatch_penalty = 2L) {
-  if (is.null(read) | is.null(reference)) stop("read and reference cannot be NULL")
-  obj <- ssw_py$SSW(match_score = as.integer(match_score), mismatch_penalty = as.integer(mismatch_penalty))
-  obj$setRead(read)
-  obj$setReference(reference)
+align <- function(
+    read,
+    reference,
+    gap_open = 3L,
+    gap_extension = 1L,
+    start_idx = 0L,
+    end_idx = 0L,
+    match_score = 2L,
+    mismatch_penalty = 2L) {
+  obj <- ssw_py$AlignmentMgr(
+    match_score = as.integer(match_score),
+    mismatch_penalty = as.integer(mismatch_penalty)
+  )
+  obj$set_read(read)
+  obj$set_reference(reference)
   res <- obj$align(
     gap_open = as.integer(gap_open),
     gap_extension = as.integer(gap_extension),
     start_idx = as.integer(start_idx),
     end_idx = as.integer(end_idx)
   )
-  lst <- list("ssw" = obj, "alignment" = res)
-  class(lst) <- "ssw"
-  lst
+
+  structure(list("ssw" = obj, "alignment" = res), class = "ssw")
 }

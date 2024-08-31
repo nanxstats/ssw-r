@@ -47,25 +47,39 @@ Align the read against the reference sequence (`TTTTACGTCCCCC`) and print the re
 read |> align("TTTTACGTCCCCC")
 ```
 
-```
+```{text, echo = !run}
 CIGAR start index 4: 4M
-optimal_score: 8	sub-optimal_score: 0
+optimal_score: 8
+sub-optimal_score: 0
 target_begin: 4	target_end: 7
-query_begin: 0	query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        4    ACGT    7
                     ||||
 Query:         0    ACGT    3
-
-ACGT
 ```
 
 Get specific results, such as the alignment scores:
 
 ```{r}
 a <- read |> align("TTTTACGTCCCCC")
+```
+
+```{r}
 a$alignment$optimal_score
+```
+
+```{text, echo = !run}
+[1] 8
+```
+
+```{r}
 a$alignment$sub_optimal_score
+```
+
+```{text, echo = !run}
+[1] 0
 ```
 
 ## Deletion
@@ -74,17 +88,17 @@ a$alignment$sub_optimal_score
 read |> align("TTTTACAGTCCCCC")
 ```
 
-```
+```{text, echo = !run}
 CIGAR start index 4: 2M1D2M
-optimal_score: 5	sub-optimal_score: 0
+optimal_score: 5
+sub-optimal_score: 0
 target_begin: 4	target_end: 8
-query_begin: 0	query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        4    ACAGT    8
                     ||*||
 Query:         0    AC-GT    3
-
-ACGT
 ```
 
 ## Insertion with gap open
@@ -93,17 +107,17 @@ ACGT
 read |> align("TTTTACTCCCCC", gap_open = 3)
 ```
 
-```
+```{text, echo = !run}
 CIGAR start index 4: 2M
-optimal_score: 4	sub-optimal_score: 0
+optimal_score: 4
+sub-optimal_score: 0
 target_begin: 4	target_end: 5
-query_begin: 0	query_end: 1
+query_begin: 0
+query_end: 1
 
 Target:        4    AC    5
                     ||
 Query:         0    AC    1
-
-ACGT
 ```
 
 ## Insertion with no gap open penalty
@@ -112,17 +126,17 @@ ACGT
 read |> align("TTTTACTCCCCC", gap_open = 0)
 ```
 
-```
+```{text, echo = !run}
 CIGAR start index 4: 2M1I1M
-optimal_score: 6	sub-optimal_score: 0
+optimal_score: 6
+sub-optimal_score: 0
 target_begin: 4	target_end: 6
-query_begin: 0	query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        4    AC-T    6
                     ||*|
 Query:         0    ACGT    3
-
-ACGT
 ```
 
 ## Specify start index
@@ -132,17 +146,17 @@ a <- align("ACTG", "ACTCACTG", start_idx = 4)
 a
 ```
 
-```
+```{text, echo = !run}
 CIGAR start index 0: 4M
-optimal_score: 8	sub-optimal_score: 0
+optimal_score: 8
+sub-optimal_score: 0
 target_begin: 0	target_end: 3
-query_begin: 0	query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        0    ACTC    3
                     |||*
 Query:         0    ACTG    3
-
-ACTG
 ```
 
 Print the results from position 4:
@@ -151,17 +165,17 @@ Print the results from position 4:
 a |> print(start_idx = 4)
 ```
 
-```
+```{text, echo = !run}
 CIGAR start index 0: 4M
-optimal_score: 8	sub-optimal_score: 0
+optimal_score: 8
+sub-optimal_score: 0
 target_begin: 0	target_end: 3
-query_begin: 0	query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        0    ACTG    3
                     ||||
 Query:         0    ACTG    3
-
-ACTG
 ```
 
 ## Forced alignment
@@ -175,17 +189,17 @@ a
 
 The results are truncated:
 
-```
+```{text, echo = !run}
 CIGAR start index 4: 3M
-optimal_score: 6	sub-optimal_score: 0
+optimal_score: 6
+sub-optimal_score: 0
 target_begin: 4	target_end: 6
-query_begin: 1	query_end: 3
+query_begin: 1
+query_end: 3
 
 Target:        4    CTG    6
                     |||
 Query:         1    CTG    3
-
-ACTG
 ```
 
 Use `formatter()` to avoid the truncation:
@@ -195,13 +209,21 @@ b <- a |> formatter()
 b
 ```
 
+```{text, echo = !run}
+[[1]]
+[1] "TTTTCTGCCCCCACG"
+
+[[2]]
+[1] "   ACTG"
+```
+
 Or pretty-print the formatted results directly:
 
 ```{r}
 a |> formatter(print = TRUE)
 ```
 
-```
+```{text, echo = !run}
 TTTTCTGCCCCCACG
    ACTG
 ```
