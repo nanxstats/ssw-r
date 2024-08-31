@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-R interface for SSW, a fast implementation of the Smith-Waterman algorithm for sequence alignment using SIMD.
+Provides an R interface for 'SSW' (Striped Smith-Waterman) via its 'Python' binding 'ssw-py'. 'SSW' is a fast C/C++ implementation of the Smith-Waterman algorithm for pairwise sequence alignment using Single-Instruction-Multiple-Data (SIMD) instructions. 'SSW' enhances the standard algorithm by efficiently returning alignment information and suboptimal alignment scores. The core 'SSW' library offers performance improvements for various bioinformatics tasks, including protein database searches, short-read alignments, primary and split-read mapping, structural variant detection, and read-overlap graph generation. These features make 'SSW' particularly useful for genomic applications. Zhao et al. (2013) \doi{10.1371/journal.pone.0082138} developed the original C/C++ implementation.
 }
 \seealso{
 Useful links:
