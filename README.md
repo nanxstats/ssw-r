@@ -28,10 +28,9 @@ remotes::install_github("nanxstats/ssw-r")
 
 ## Install ssw-py
 
-The easiest way to install the Python package ssw-py that ssw-r can discover
+A simple way to install the Python package ssw-py that ssw-r can discover
 easily, is to run the helper function `ssw::install_ssw_py()`.
-By default, it installs ssw-py into an virtual environment with the
-environment name `r-ssw-py`.
+By default, it installs ssw-py into an virtual environment named `r-ssw-py`.
 
 ```r
 ssw::install_ssw_py()
