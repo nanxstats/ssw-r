@@ -14,38 +14,85 @@ using SIMD. ssw-r is currently built on the Python package
 
 ## Installation
 
-Install ssw-r from GitHub:
+You can install ssw-r from CRAN once available:
+
+```r
+install.packages("ssw")
+```
+
+Or try the development version on GitHub:
 
 ```r
 remotes::install_github("nanxstats/ssw-r")
 ```
 
-Installed ssw-py via pip:
+## Install ssw-py
 
-```bash
-pip3 install ssw-py
+The easiest way to install the Python package ssw-py that ssw-r can discover
+easily, is to run the helper function `ssw::install_ssw_py()`.
+By default, it installs ssw-py into an virtual environment with the
+environment name `r-ssw-py`.
+
+```r
+ssw::install_ssw_py()
 ```
+
+This follows the best practices suggested by the reticulate vignette
+[Managing an R Package's Python
+Dependencies](https://rstudio.github.io/reticulate/articles/python_dependencies.html).
+There are also recommendations in the vignette on how to manage multiple
+R packages with different Python dependencies.
 
 ## Usage
 
 ```r
-reticulate::use_python("/usr/local/bin/python3")
 library("ssw")
+```
 
+```r
 "ACGT" |> align("TTTTACGTCCCCC")
+```
+
+```text
+CIGAR start index 4: 4M
+optimal_score: 8
+sub-optimal_score: 0
+target_begin: 4	target_end: 7
+query_begin: 0
+query_end: 3
+
+Target:        4    ACGT    7
+                    ||||
+Query:         0    ACGT    3
+```
+
+```r
 "ACGT" |> align("TTTTACTCCCCC", gap_open = 3)
+```
+
+```text
+CIGAR start index 4: 2M
+optimal_score: 4
+sub-optimal_score: 0
+target_begin: 4	target_end: 5
+query_begin: 0
+query_end: 1
+
+Target:        4    AC    5
+                    ||
+Query:         0    AC    1
+```
+
+```r
 "ACTG" |> force_align("TTTTCTGCCCCCACG") |> formatter(print = TRUE)
 ```
 
-## Developers
-
-If you have already installed Python and ssw-py, and want to develop ssw-r in RStudio, simply create a file `.Rprofile` under the package directory and set the Python binary path (Homebrew Python 3 path example below):
-
-```r
-Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
+```text
+TTTTCTGCCCCCACG
+   ACTG
 ```
 
-The next time you open the project, the correct Python path and library path should be already set. For more technical details, see [reticulate Python version configuration](https://rstudio.github.io/reticulate/articles/versions.html).
+For detailed usage, see the [vignette](https://nanx.me/ssw-r/articles/ssw.html).
 
 ## Acknowledgements
 
