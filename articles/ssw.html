@@ -82,126 +82,135 @@ alignment using SIMD, described in <span class="citation">Zhao et al.
 (<code>TTTTACGTCCCCC</code>) and print the results:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">read</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACGTCCCCC"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>CIGAR start index 4: 4M
-optimal_score: 8    sub-optimal_score: 0
+<pre class="text"><code>CIGAR start index 4: 4M
+optimal_score: 8
+sub-optimal_score: 0
 target_begin: 4 target_end: 7
-query_begin: 0  query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        4    ACGT    7
                     ||||
-Query:         0    ACGT    3
-
-ACGT</code></pre>
+Query:         0    ACGT    3</code></pre>
 <p>Get specific results, such as the alignment scores:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="va">read</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACGTCCCCC"</span><span class="op">)</span></span>
-<span><span class="va">a</span><span class="op">$</span><span class="va">alignment</span><span class="op">$</span><span class="va">optimal_score</span></span>
-<span><span class="va">a</span><span class="op">$</span><span class="va">alignment</span><span class="op">$</span><span class="va">sub_optimal_score</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="va">read</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACGTCCCCC"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">a</span><span class="op">$</span><span class="va">alignment</span><span class="op">$</span><span class="va">optimal_score</span></span></code></pre></div>
+<pre class="text"><code>[1] 8</code></pre>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">a</span><span class="op">$</span><span class="va">alignment</span><span class="op">$</span><span class="va">sub_optimal_score</span></span></code></pre></div>
+<pre class="text"><code>[1] 0</code></pre>
 </div>
 <div class="section level2">
 <h2 id="deletion">Deletion<a class="anchor" aria-label="anchor" href="#deletion"></a>
 </h2>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">read</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACAGTCCCCC"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>CIGAR start index 4: 2M1D2M
-optimal_score: 5    sub-optimal_score: 0
+<pre class="text"><code>CIGAR start index 4: 2M1D2M
+optimal_score: 5
+sub-optimal_score: 0
 target_begin: 4 target_end: 8
-query_begin: 0  query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        4    ACAGT    8
                     ||*||
-Query:         0    AC-GT    3
-
-ACGT</code></pre>
+Query:         0    AC-GT    3</code></pre>
 </div>
 <div class="section level2">
 <h2 id="insertion-with-gap-open">Insertion with gap open<a class="anchor" aria-label="anchor" href="#insertion-with-gap-open"></a>
 </h2>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">read</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACTCCCCC"</span>, gap_open <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<pre><code>CIGAR start index 4: 2M
-optimal_score: 4    sub-optimal_score: 0
+<pre class="text"><code>CIGAR start index 4: 2M
+optimal_score: 4
+sub-optimal_score: 0
 target_begin: 4 target_end: 5
-query_begin: 0  query_end: 1
+query_begin: 0
+query_end: 1
 
 Target:        4    AC    5
                     ||
-Query:         0    AC    1
-
-ACGT</code></pre>
+Query:         0    AC    1</code></pre>
 </div>
 <div class="section level2">
 <h2 id="insertion-with-no-gap-open-penalty">Insertion with no gap open penalty<a class="anchor" aria-label="anchor" href="#insertion-with-no-gap-open-penalty"></a>
 </h2>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">read</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/align.html">align</a></span><span class="op">(</span><span class="st">"TTTTACTCCCCC"</span>, gap_open <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
-<pre><code>CIGAR start index 4: 2M1I1M
-optimal_score: 6    sub-optimal_score: 0
+<pre class="text"><code>CIGAR start index 4: 2M1I1M
+optimal_score: 6
+sub-optimal_score: 0
 target_begin: 4 target_end: 6
-query_begin: 0  query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        4    AC-T    6
                     ||*|
-Query:         0    ACGT    3
-
-ACGT</code></pre>
+Query:         0    ACGT    3</code></pre>
 </div>
 <div class="section level2">
 <h2 id="specify-start-index">Specify start index<a class="anchor" aria-label="anchor" href="#specify-start-index"></a>
 </h2>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/align.html">align</a></span><span class="op">(</span><span class="st">"ACTG"</span>, <span class="st">"ACTCACTG"</span>, start_idx <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span>
 <span><span class="va">a</span></span></code></pre></div>
-<pre><code>CIGAR start index 0: 4M
-optimal_score: 8    sub-optimal_score: 0
+<pre class="text"><code>CIGAR start index 0: 4M
+optimal_score: 8
+sub-optimal_score: 0
 target_begin: 0 target_end: 3
-query_begin: 0  query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        0    ACTC    3
                     |||*
-Query:         0    ACTG    3
-
-ACTG</code></pre>
+Query:         0    ACTG    3</code></pre>
 <p>Print the results from position 4:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span>start_idx <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></code></pre></div>
-<pre><code>CIGAR start index 0: 4M
-optimal_score: 8    sub-optimal_score: 0
+<pre class="text"><code>CIGAR start index 0: 4M
+optimal_score: 8
+sub-optimal_score: 0
 target_begin: 0 target_end: 3
-query_begin: 0  query_end: 3
+query_begin: 0
+query_end: 3
 
 Target:        0    ACTG    3
                     ||||
-Query:         0    ACTG    3
-
-ACTG</code></pre>
+Query:         0    ACTG    3</code></pre>
 </div>
 <div class="section level2">
 <h2 id="forced-alignment">Forced alignment<a class="anchor" aria-label="anchor" href="#forced-alignment"></a>
 </h2>
 <p>Enforce no gaps by increasing the penalty:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/force_align.html">force_align</a></span><span class="op">(</span><span class="st">"ACTG"</span>, <span class="st">"TTTTCTGCCCCCACG"</span><span class="op">)</span></span>
 <span><span class="va">a</span></span></code></pre></div>
 <p>The results are truncated:</p>
-<pre><code>CIGAR start index 4: 3M
-optimal_score: 6    sub-optimal_score: 0
+<pre class="text"><code>CIGAR start index 4: 3M
+optimal_score: 6
+sub-optimal_score: 0
 target_begin: 4 target_end: 6
-query_begin: 1  query_end: 3
+query_begin: 1
+query_end: 3
 
 Target:        4    CTG    6
                     |||
-Query:         1    CTG    3
-
-ACTG</code></pre>
+Query:         1    CTG    3</code></pre>
 <p>Use <code><a href="../reference/formatter.html">formatter()</a></code> to avoid the truncation:</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">b</span> <span class="op">&lt;-</span> <span class="va">a</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/formatter.html">formatter</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">b</span></span></code></pre></div>
+<pre class="text"><code>[[1]]
+[1] "TTTTCTGCCCCCACG"
+
+[[2]]
+[1] "   ACTG"</code></pre>
 <p>Or pretty-print the formatted results directly:</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/formatter.html">formatter</a></span><span class="op">(</span>print <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="va">TTTTCTGCCCCCACG</span></span>
+<pre class="text"><code><span><span class="va">TTTTCTGCCCCCACG</span></span>
 <span>   <span class="va">ACTG</span></span></code></pre>
 </div>
 <div class="section level2">
