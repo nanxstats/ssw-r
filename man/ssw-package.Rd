@@ -22,11 +22,5 @@ Useful links:
 \author{
 \strong{Maintainer}: Nan Xiao \email{me@nanx.me} (\href{https://orcid.org/0000-0002-0250-5673}{ORCID})
 
-Other contributors:
-\itemize{
-  \item Nick Conway (https://github.com/Wyss/ssw-py) [contributor, copyright holder]
-  \item Mengyao Zhao (https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library) [contributor, copyright holder]
-}
-
 }
 \keyword{internal}

@@ -1,0 +1,12 @@
+bibentry(
+  "Article",
+  key = "zhao2013ssw",
+  title = "SSW library: an {SIMD} Smith-Waterman {C/C++} library for use in genomic applications",
+  author = "Mengyao Zhao and Wan-Ping Lee and Erik P Garrison and Gabor T Marth",
+  journal = "{PloS ONE}",
+  volume = 8,
+  number = 12,
+  pages = "e82138",
+  year = 2013,
+  doi = "10.1371/journal.pone.0082138"
+)

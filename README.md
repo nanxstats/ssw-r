@@ -6,7 +6,11 @@
 ![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/ssw)
 <!-- badges: end -->
 
-ssw-r offers an R interface for [SSW](https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library), a fast implementation of the Smith-Waterman algorithm for sequence alignment using SIMD. ssw-r is currently built on the Python package [ssw-py](https://github.com/Wyss/ssw-py).
+ssw-r offers an R interface for
+[SSW](https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library),
+a fast implementation of the Smith-Waterman algorithm for sequence alignment
+using SIMD. ssw-r is currently built on the Python package
+[ssw-py](https://pypi.org/project/ssw-py/).
 
 ## Installation
 
@@ -42,6 +46,21 @@ Sys.setenv(RETICULATE_PYTHON = "/usr/local/bin/python3")
 ```
 
 The next time you open the project, the correct Python path and library path should be already set. For more technical details, see [reticulate Python version configuration](https://rstudio.github.io/reticulate/articles/versions.html).
+
+## Acknowledgements
+
+ssw-r is built upon the work of two outstanding projects:
+
+1. [SSW](https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library) - Original C implementation. Author: Mengyao Zhao
+1. [ssw-py](https://pypi.org/project/ssw-py/) - Python binding for SSW. Author: Nick Conway
+
+We extend our sincere gratitude to Mengyao Zhao for developing the original
+SSW library and to Nick Conway for maintaining the ssw-py package.
+Their work forms the foundation of ssw-r.
+While ssw-r does not directly incorporate code from these projects,
+it serves as an R interface to their functionality. We encourage users to
+visit the original repositories for more information about the underlying
+implementation and to consider citing these works in publications that use ssw-r.
 
 ## License
 

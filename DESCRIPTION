@@ -4,11 +4,7 @@ Title: Striped Smith-Waterman Algorithm for Sequence Alignment using SIMD
 Version: 0.1.1
 Authors@R: c(
     person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-0250-5673")),
-    person("Nick", "Conway", role = c("ctb", "cph"),
-           comment = "https://github.com/Wyss/ssw-py"),
-    person("Mengyao", "Zhao", role = c("ctb", "cph"),
-           comment = "https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library")
+           comment = c(ORCID = "0000-0002-0250-5673"))
     )
 Description: R interface for SSW, a fast implementation of the Smith-Waterman
     algorithm for sequence alignment using SIMD.
