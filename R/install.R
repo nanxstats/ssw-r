@@ -14,7 +14,7 @@
 #'
 #' @export
 #'
-#' @examplesIf is_installed_sswpy()
+#' @examplesIf is_installed_ssw_py()
 #' install_ssw_py()
 install_ssw_py <- function(
     ...,

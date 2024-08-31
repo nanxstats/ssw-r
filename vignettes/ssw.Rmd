@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
   collapse = TRUE
 )
 
-run <- if (ssw::is_installed_sswpy()) TRUE else FALSE
+run <- if (ssw::is_installed_ssw_py()) TRUE else FALSE
 knitr::opts_chunk$set(eval = run)
 ```
 

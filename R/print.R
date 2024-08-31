@@ -8,7 +8,7 @@
 #'
 #' @export
 #'
-#' @examplesIf is_installed_sswpy()
+#' @examplesIf is_installed_ssw_py()
 #' a <- align("ACGT", "TTTTACGTCCCCC")
 #' a
 
@@ -23,12 +23,12 @@ print.ssw <- function (x, start_idx = 0L, ...) {
 #'
 #' @export formatter
 #'
-#' @examplesIf is_installed_sswpy()
+#' @examplesIf is_installed_ssw_py()
 #' a <- force_align("ACTG", "TTTTCTGCCCCCACG")
 #' b <- a |> formatter()
 #' b
 #' a |> formatter(print = TRUE)
 
 formatter <- function (x, print = FALSE) {
-  invisible(pyssw$format_force_align(x$read, x$reference, x$alignment, do_print = print))
+  invisible(ssw_py$format_force_align(x$read, x$reference, x$alignment, do_print = print))
 }

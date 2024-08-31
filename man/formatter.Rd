@@ -15,7 +15,7 @@ formatter(x, print = FALSE)
 Format and pretty-print SSW forced alignment results without truncation
 }
 \examples{
-\dontshow{if (is_installed_sswpy()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (is_installed_ssw_py()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 a <- force_align("ACTG", "TTTTCTGCCCCCACG")
 b <- a |> formatter()
 b

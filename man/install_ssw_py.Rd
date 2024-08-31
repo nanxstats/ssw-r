@@ -28,7 +28,7 @@ Invisibly returns `NULL`. Primarily used for its side effect
 Install ssw-py and its dependencies
 }
 \examples{
-\dontshow{if (is_installed_sswpy()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (is_installed_ssw_py()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 install_ssw_py()
 \dontshow{\}) # examplesIf}
 }

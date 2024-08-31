@@ -11,7 +11,7 @@
 #'
 #' @export force_align
 #'
-#' @examplesIf is_installed_sswpy()
+#' @examplesIf is_installed_ssw_py()
 #' # Results are truncated
 #' a <- force_align("ACTG", "TTTTCTGCCCCCACG")
 #' a
@@ -24,10 +24,10 @@
 #' a |> formatter(print = TRUE)
 
 force_align <- function(read, reference, force_overhang = FALSE, match_score = 2L, mismatch_penalty = 2L) {
-  obj <- pyssw$SSW(match_score = as.integer(match_score), mismatch_penalty = as.integer(mismatch_penalty))
+  obj <- ssw_py$SSW(match_score = as.integer(match_score), mismatch_penalty = as.integer(mismatch_penalty))
   obj$setRead(read)
   obj$setReference(reference)
-  res <- pyssw$force_align(read = read, reference = reference, force_overhang = force_overhang)
+  res <- ssw_py$force_align(read = read, reference = reference, force_overhang = force_overhang)
   lst <- list("ssw" = obj, "alignment" = res, "read" = read, "reference" = reference)
   class(lst) <- "ssw"
   lst
