@@ -14,5 +14,6 @@ reference:
       - formatter
   - title: "Helpers"
     contents:
+      - install_ssw_py
       - pyssw
       - is_installed_sswpy
