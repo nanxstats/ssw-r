@@ -10,8 +10,6 @@
 #' @return Invisibly returns `NULL`. Primarily used for its side effect
 #'   of installing the Python package in the specified environment.
 #'
-#' @importFrom reticulate py_install virtualenv_exists virtualenv_remove
-#'
 #' @export
 #'
 #' @examplesIf is_installed_ssw_py()
@@ -20,6 +18,6 @@ install_ssw_py <- function(
     ...,
     envname = "r-ssw-py",
     new_env = identical(envname, "r-ssw-py")) {
-  if (new_env && virtualenv_exists(envname)) virtualenv_remove(envname)
-  py_install(packages = "ssw-py", envname = envname, ...)
+  if (new_env && reticulate::virtualenv_exists(envname)) reticulate::virtualenv_remove(envname)
+  reticulate::py_install(packages = "ssw-py", envname = envname, ...)
 }

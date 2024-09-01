@@ -1,7 +1,4 @@
 #' @keywords internal
-#'
-#' @importFrom utils packageName
-#' @importFrom reticulate import
 "_PACKAGE"
 
 #' Global reference to ssw-py

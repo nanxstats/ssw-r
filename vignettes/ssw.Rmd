@@ -1,6 +1,5 @@
 ---
 title: "Getting started with ssw-r: Sequence alignment examples"
-author: "Nan Xiao <<https://nanx.me>>"
 bibliography: ssw.bib
 output:
   rmarkdown::html_document:
@@ -10,7 +9,7 @@ output:
     css: "custom.css"
 vignette: >
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteIndexEntry{Examples for ssw-r}
+  %\VignetteIndexEntry{Getting started with ssw-r: Sequence alignment examples}
 ---
 
 ```{r, include=FALSE}
@@ -232,8 +231,10 @@ TTTTCTGCCCCCACG
 
 ssw-r is built upon the work of two outstanding projects:
 
-1. [SSW](https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library) - Original C implementation. Author: Mengyao Zhao
-1. [ssw-py](https://pypi.org/project/ssw-py/) - Python binding for SSW. Author: Nick Conway
+1. [SSW](https://github.com/mengyao/Complete-Striped-Smith-Waterman-Library) -
+   Original C implementation. Author: Mengyao Zhao
+1. [ssw-py](https://pypi.org/project/ssw-py/) - Python binding for SSW.
+   Author: Nick Conway
 
 We extend our sincere gratitude to Mengyao Zhao for developing the original
 SSW library and to Nick Conway for maintaining the ssw-py package.
