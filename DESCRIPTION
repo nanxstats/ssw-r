@@ -1,8 +1,8 @@
 Package: ssw
 Title: Striped Smith-Waterman Algorithm for Sequence Alignment using SIMD
-Version: 0.1.1
+Version: 0.2.0
 Authors@R: c(
-    person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre"),
+    person("Nan", "Xiao", email = "me@nanx.me", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-0250-5673"))
     )
 Description: Provides an R interface for 'SSW' (Striped Smith-Waterman)
