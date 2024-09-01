@@ -13,6 +13,9 @@
 
 \item{...}{Additional parameters for \code{\link[=print]{print()}} (not used).}
 }
+\value{
+Invisibly returns the input object.
+}
 \description{
 Print SSW alignment results
 }

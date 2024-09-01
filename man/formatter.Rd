@@ -11,6 +11,9 @@ formatter(x, print = FALSE)
 
 \item{print}{Pretty-print the results? Default is \code{FALSE}.}
 }
+\value{
+The formatted forced alignment results.
+}
 \description{
 Format and pretty-print SSW forced alignment results without truncation
 }

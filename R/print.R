@@ -4,6 +4,8 @@
 #' @param start_idx Index to start printing from.
 #' @param ... Additional parameters for [print()] (not used).
 #'
+#' @return Invisibly returns the input object.
+#'
 #' @method print ssw
 #'
 #' @export
@@ -13,12 +15,15 @@
 #' a
 print.ssw <- function(x, start_idx = 0L, ...) {
   x$ssw$print_result(x$alignment, start_idx = as.integer(start_idx))
+  invisible(x)
 }
 
 #' Format and pretty-print SSW forced alignment results without truncation
 #'
 #' @param x An object of class `ssw` containing the forced alignment results.
 #' @param print Pretty-print the results? Default is `FALSE`.
+#'
+#' @return The formatted forced alignment results.
 #'
 #' @export formatter
 #'
