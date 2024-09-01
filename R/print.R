@@ -11,15 +11,14 @@
 #' @examplesIf is_installed_ssw_py()
 #' a <- align("ACGT", "TTTTACGTCCCCC")
 #' a
-
-print.ssw <- function (x, start_idx = 0L, ...) {
+print.ssw <- function(x, start_idx = 0L, ...) {
   x$ssw$print_result(x$alignment, start_idx = as.integer(start_idx))
 }
 
 #' Format and pretty-print SSW forced alignment results without truncation
 #'
-#' @param x Forced alignment results. An object of class `ssw`.
-#' @param print Pretty-print the results?
+#' @param x An object of class `ssw` containing the forced alignment results.
+#' @param print Pretty-print the results? Default is `FALSE`.
 #'
 #' @export formatter
 #'
@@ -28,7 +27,6 @@ print.ssw <- function (x, start_idx = 0L, ...) {
 #' b <- a |> formatter()
 #' b
 #' a |> formatter(print = TRUE)
-
-formatter <- function (x, print = FALSE) {
+formatter <- function(x, print = FALSE) {
   invisible(ssw_py$format_force_align(x$read, x$reference, x$alignment, do_print = print))
 }

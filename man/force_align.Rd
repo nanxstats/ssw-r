@@ -2,7 +2,7 @@
 % Please edit documentation in R/force_align.R
 \name{force_align}
 \alias{force_align}
-\title{Forced alignment by increasing gap open penalty}
+\title{Perform forced alignment with increased gap open penalty}
 \usage{
 force_align(
   read,
@@ -13,22 +13,25 @@ force_align(
 )
 }
 \arguments{
-\item{read}{The read, character string}
+\item{read}{A character string of the read.}
 
-\item{reference}{The reference, character string}
+\item{reference}{A character string of the reference.}
 
-\item{force_overhang}{Make sure only one end overhangs?}
+\item{force_overhang}{Logical. If \code{TRUE}, ensures only one end of the
+alignment overhangs. Default is \code{FALSE}.}
 
-\item{match_score}{For scoring matches, integer}
+\item{match_score}{An integer for scoring matches,
+ranging from 0 to 255. Default is 2.}
 
-\item{mismatch_penalty}{For scoring mismatches, integer}
+\item{mismatch_penalty}{An integer for mismatch penalties,
+ranging from 0 to 255. Default is 2.}
 }
 \value{
-A list containing the input sequences, ssw aligner object,
-and the alignment results.
+A list of class \code{ssw} containing the input sequences,
+the ssw aligner object, and the alignment results.
 }
 \description{
-Forced alignment by increasing gap open penalty
+Perform forced alignment with increased gap open penalty
 }
 \examples{
 \dontshow{if (is_installed_ssw_py()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

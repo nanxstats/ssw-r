@@ -1,13 +1,16 @@
-#' Forced alignment by increasing gap open penalty
+#' Perform forced alignment with increased gap open penalty
 #'
-#' @param read The read, character string
-#' @param reference The reference, character string
-#' @param force_overhang Make sure only one end overhangs?
-#' @param match_score For scoring matches, integer
-#' @param mismatch_penalty For scoring mismatches, integer
+#' @param read A character string of the read.
+#' @param reference A character string of the reference.
+#' @param force_overhang Logical. If `TRUE`, ensures only one end of the
+#'   alignment overhangs. Default is `FALSE`.
+#' @param match_score An integer for scoring matches,
+#'   ranging from 0 to 255. Default is 2.
+#' @param mismatch_penalty An integer for mismatch penalties,
+#'   ranging from 0 to 255. Default is 2.
 #'
-#' @return A list containing the input sequences, ssw aligner object,
-#' and the alignment results.
+#' @return A list of class `ssw` containing the input sequences,
+#'   the ssw aligner object, and the alignment results.
 #'
 #' @export force_align
 #'
