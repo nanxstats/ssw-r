@@ -3,7 +3,6 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/nanxstats/ssw-r/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nanxstats/ssw-r/actions/workflows/R-CMD-check.yaml)
 ![CRAN status](https://www.r-pkg.org/badges/version/ssw)
-![Downloads from the RStudio CRAN mirror](https://cranlogs.r-pkg.org/badges/ssw)
 <!-- badges: end -->
 
 ssw-r offers an R interface for
