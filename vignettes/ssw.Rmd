@@ -1,5 +1,5 @@
 ---
-title: "Code Examples for ssw-r"
+title: "Getting started with ssw-r: Sequence alignment examples"
 author: "Nan Xiao <<https://nanx.me>>"
 bibliography: ssw.bib
 output:

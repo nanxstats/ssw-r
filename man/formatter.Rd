@@ -7,9 +7,9 @@
 formatter(x, print = FALSE)
 }
 \arguments{
-\item{x}{Forced alignment results. An object of class \code{ssw}.}
+\item{x}{An object of class \code{ssw} containing the forced alignment results.}
 
-\item{print}{Pretty-print the results?}
+\item{print}{Pretty-print the results? Default is \code{FALSE}.}
 }
 \description{
 Format and pretty-print SSW forced alignment results without truncation

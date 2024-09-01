@@ -2,7 +2,7 @@
 % Please edit documentation in R/align.R
 \name{align}
 \alias{align}
-\title{Align a read to the reference with optional index offsetting}
+\title{Perform Smith-Waterman alignment of a read against a reference sequence}
 \usage{
 align(
   read,
@@ -16,28 +16,31 @@ align(
 )
 }
 \arguments{
-\item{read}{The read, character string}
+\item{read}{A character string of the read.}
 
-\item{reference}{The reference, character string}
+\item{reference}{A character string of the reference.}
 
-\item{gap_open}{Penalty for gap_open}
+\item{gap_open}{Penalty for opening a gap. Default is 3.}
 
-\item{gap_extension}{Penalty for gap_extension}
+\item{gap_extension}{Penalty for extending a gap. Default is 1.}
 
-\item{start_idx}{Index to start search}
+\item{start_idx}{Index to start the alignment search. Default is 0.}
 
-\item{end_idx}{Index to end search (trying to avoid a target region).
-The default value 0 means using the whole reference length.}
+\item{end_idx}{Index to end the alignment search.
+The default value 0 means using the entire reference length.}
 
-\item{match_score}{For scoring matches, integer}
+\item{match_score}{An integer for scoring matches,
+ranging from 0 to 255. Default is 2.}
 
-\item{mismatch_penalty}{For scoring mismatches, integer}
+\item{mismatch_penalty}{An integer for mismatch penalties,
+ranging from 0 to 255. Default is 2.}
 }
 \value{
-A list containing the ssw aligner object and the alignment results.
+A list of class \code{ssw} containing the ssw aligner object
+and the alignment results.
 }
 \description{
-Align a read to the reference with optional index offsetting
+Perform Smith-Waterman alignment of a read against a reference sequence
 }
 \examples{
 \dontshow{if (is_installed_ssw_py()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}

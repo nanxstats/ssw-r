@@ -1,16 +1,19 @@
-#' Align a read to the reference with optional index offsetting
+#' Perform Smith-Waterman alignment of a read against a reference sequence
 #'
-#' @param read The read, character string
-#' @param reference The reference, character string
-#' @param gap_open Penalty for gap_open
-#' @param gap_extension Penalty for gap_extension
-#' @param start_idx Index to start search
-#' @param end_idx Index to end search (trying to avoid a target region).
-#' The default value 0 means using the whole reference length.
-#' @param match_score For scoring matches, integer
-#' @param mismatch_penalty For scoring mismatches, integer
+#' @param read A character string of the read.
+#' @param reference A character string of the reference.
+#' @param gap_open Penalty for opening a gap. Default is 3.
+#' @param gap_extension Penalty for extending a gap. Default is 1.
+#' @param start_idx Index to start the alignment search. Default is 0.
+#' @param end_idx Index to end the alignment search.
+#'   The default value 0 means using the entire reference length.
+#' @param match_score An integer for scoring matches,
+#'   ranging from 0 to 255. Default is 2.
+#' @param mismatch_penalty An integer for mismatch penalties,
+#'   ranging from 0 to 255. Default is 2.
 #'
-#' @return A list containing the ssw aligner object and the alignment results.
+#' @return A list of class `ssw` containing the ssw aligner object
+#'   and the alignment results.
 #'
 #' @export align
 #'
