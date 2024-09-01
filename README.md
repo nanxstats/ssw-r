@@ -107,6 +107,8 @@ it serves as an R interface to their functionality. We encourage users to
 visit the original repositories for more information about the underlying
 implementation and to consider citing these works in publications that use ssw-r.
 
-## License
+## Code of Conduct
 
-This project is licensed under the MIT license.
+Please note that the ssw-r project is released with a
+[Contributor Code of Conduct](https://nanx.me/ssw-r/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
