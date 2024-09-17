@@ -1,3 +1,12 @@
+# ssw 0.2.1
+
+## Improvements
+
+- Replace knitr code chunks with Markdown code blocks in vignettes to
+  resolve `R CMD check` error for CRAN macOS r-oldrel environments (#20).
+- Move `.onLoad()` logic into `R/zzz.R` following convention (#18).
+- Use single quotes for 'C' and 'C++' in `DESCRIPTION` (#21).
+
 # ssw 0.2.0
 
 ## Improvements
